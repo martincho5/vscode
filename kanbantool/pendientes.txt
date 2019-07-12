@@ -1,0 +1,25 @@
+Descargar Update en todos los AD.
+Logs WebServers IIS6 + F5
+Sacar listado de carpetas publicas. NO SE MIGRAN! 
+Cambio en el esquema de luces de las pasarelas
+Pruebas con DKIM/DKAM en conjunto con Seginf
+Integraciones con SDK
+Integraciones con WebService
+Poner certificado HTTPS a gestionderetencion.uade.edu.ar
+Soporte a A1Tec en desarrollo de Aplicaciones
+Share
+Reapuntar Shares en Mapeo.bat y Politicas
+RDP Vulnerability Fix
+Arreglo de los dos zocalos de la sala de tableros
+solicitar presupuesto por pintura integral interna. las 3 salas
+Instalacion cliente de MOM en Delfin5
+Cambio de 2 controles remotos rotos
+Agregar a Kuppa y Catia al inventario de Servidores. 
+Crear Salas de Reuniones
+Registrar BUXIS en RAC
+Lectura del grupo de LDAP para autenticación
+Depurar tabla WC2.STS_HITS
+Pruebas HTTPs en gestionderetencion
+Instalacion cliente de MOM en Minke5
+Instalacion cliente de MOM en Minke6
+Mapear nuevo Share en Gray2

@@ -1,0 +1,46 @@
+Clonar BUXIS de prod a PIATA sin enmascarar
+Setear cuenta de mail a no-expire
+Problemas para enviar a traves de la casilla internet@uade.edu.ar. Pedido por Cantoni Martin
+Reunión  D2L
+Reunión con D2L virtual por Adobe Connect 
+Hoja de Ruta Product Plan
+Hoja de Ruta Reunión con DFeijo
+Hoja de Ruta - Acomodar precios 2020/2021/2022/2023 en Excel 
+Revisión hoja de ruta y excel con Mdalicandro
+Informe sobre inscripciones 9 de Julio
+Configuración Azure para inscripciones  9 de Julio 
+Configuración Azure para inscripciones de 10 de julio 
+Prueba de reinicio del servidor MANCHADO
+Subida de los PST de los vigiladores de Prevencion. 
+Marcolini.
+Crincoli
+Gomez
+Barrera
+Migracion del sector: FACE
+Migracion del sector: FAIN
+Migracion del sector: FAJU
+Migracion de Sector: Biblioteca
+Migracion de Sector: UADELabs
+Migracion de sector: FADI
+Agregar por excepcion los permisos de Pedro Paradiso a Julian Del Valle
+Dar de baja lista de distribucion empresas@uade.edu.ar y darla de alta como casilla compartida.
+Alta de usuario "Directorio Graduados" / casilla "directoriograduados@uade.edu.ar" en Office 365 para envio de mails desde CRM de graduados.
+Bloqueo de remitente wgabrtcc@tjsc.jus.br. Búsqueda y eliminación de mails de este remitente con asunto "¡¡¡ATENCIÓN!!! por tratarse de phishing.
+Nuevo proceso movimientosAsset en Producción
+Problema pasaje de fotos Credenciales
+Habilitar Jobs Oracle para inscripcion Express
+Retringir webcampus en horario de inscripciones
+Balanceo de Nodos PIA en F5 para inicio de inscripciones
+Monitoreo incripciones del 9/7 al 11/7 en horario de inicio
+Alta de perfil 5447 Proyectista Jr. con sus correspondientes permisos.
+Movimiento de OU de la lista de distribución virtual@uade.edu.ar para que sincronice con O365.
+Cambios en Tracking de Alumnos
+Generar usuario A1TEC y permisos para BD de azul2
+Instalar Management Studio en SQL azul2
+Sacar de la lista diadelafamilia@uade.edu.ar a Pablo Lucero y agregar a María Victoria Gabas.
+Alta de lista de distribución empleosdelfuturo@uade.edu.ar con los miembros Andrés Cuesta, Rosina Scher, Ariel Vázquez y Mara Botto.
+ReMapear  Share en Procesos de movimientosAsset
+Remapear acceso Share en Fresno3
+Reunión Comité Tecnológico
+Reunión por integraciones del nuevo sistema de control de acceso
+Reunión para definir alternativas para importar marcaciones desde Qlikview
