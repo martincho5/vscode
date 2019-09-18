@@ -7,19 +7,18 @@ Integraciones con SDK
 Integraciones con WebService
 Poner certificado HTTPS a gestionderetencion.uade.edu.ar
 Soporte a A1Tec en desarrollo de Aplicaciones
-Share
-Reapuntar Shares en Mapeo.bat y Politicas
 RDP Vulnerability Fix
-Arreglo de los dos zocalos de la sala de tableros
-solicitar presupuesto por pintura integral interna. las 3 salas
-Instalacion cliente de MOM en Delfin5
 Cambio de 2 controles remotos rotos
 Agregar a Kuppa y Catia al inventario de Servidores. 
 Crear Salas de Reuniones
 Registrar BUXIS en RAC
 Lectura del grupo de LDAP para autenticación
+Acomodar cables Montante Lima 2 - 2ss
 Depurar tabla WC2.STS_HITS
+Arreglo de los dos zocalos de la sala de tableros
 Pruebas HTTPs en gestionderetencion
-Instalacion cliente de MOM en Minke5
-Instalacion cliente de MOM en Minke6
-Mapear nuevo Share en Gray2
+TV Admis - Sacar la parte del costado izquierdo
+Servidor IBM Gastón, ver disco si sincronizó
+Creación de Ambiente de Test ROSTER
+Creación de Ambiente de Producción ROSTER
+Relevamiento de Aplicaciones y Reportes que impactan en control de acceso
