@@ -1,0 +1,10 @@
+Microservicios
+Introspectable
+Isolated
+Elastic
+
+Google - Comenzó con Docker en 2013
+LMCTFY -
+
+Containers - smaller shared images
+

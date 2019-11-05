@@ -1,0 +1,95 @@
+Objetos del Administrador
+
+Lo que vemos en texto, pero no es lo que traemos.
+Vemos service object o service controller object
+
+Vamos a ver que es un objecto, el objecto nos va a simplificar la vida
+Un objecto es como un sustantivo que tiene propiedades y métodos.
+
+Pensemos en una bicicleta, la bicicleta es un objeto.
+Tiene propiedades, que son el manubrio, el pedal, la cadena, etc.
+Entonces hay cosas que podemos hacer con ellas.
+Como pedalear, doblar. esas cosas las llamamos metodos.
+
+El display convierte a texto.
+Se trata de demorar la conversión a texto del display lo más lejos posible.
+
+Cada Get-process da un objecto, cada línea es un objecto y cada columna refleja una propiedad.
+
+Entonces si quiero saber los procesos mayores a 900
+Get-process | where handles -gt 900
+
+Ahora si los queremos ordenados (si lo pasamos a un texto como lo hacemos)
+Pero son objecto
+Get-process | where handles -gt 900 | sort handles
+
+Ahora como se todas las propiedades y métodos de un object
+| get-member
+| gm
+
+Lo primero que nos dice es que tipo de objecto es.
+System.ServiceProcess.ServiceController
+
+Todo lo que dice property es una propiedad
+
+Ahora tenemos una alias para ver get-service | select-object
+get-service | select -Property name, status y busco solo as propiedades que quiero ver
+
+Veamos Get-childitem
+Está ordenada por Nombre
+Ahora la quiero ordenado por Length y que muestre Length y Name
+
+Get-childitem | select -Property name, length | sort -Property length
+Get-childitem | select -Property name, length | sort -Property length -Descending
+
+Ahora veamos el Eventlog
+Get-Eventlog -Logname System -Newest 5 | gm
+
+Muchas propiedades, ahora queremos seleccionar el EventID, TimeWritten, Message
+
+Get-EventLog -LogName System -Newest 5 | Select -Property EventID, TimeWritten, Message | Sort -Property TimeWritten
+
+Ahora lo quiero como reporte
+Get-EventLog -LogName System -Newest 5 | Select -Property EventID, TimeWritten, Message | Sort -Property TimeWritten | ConvertTo-hmtl | out-file f:\error.htm
+
+Y todo eso se puede automatizar.
+
+$x = [xml](cat .\r_and_j.xml) lo leo y lo casteo en XML en la variable $x
+
+$x.PLAY.ACT.SCENE.SPEECH | Group speaker | sort count
+
+Si quiero saber toda la historia de mis comandos puede hacer Get-History
+
+Existen los filtros, como where-object abreviado es where
+
+Where-Object -FilterScript
+Nadie usa el -FilterScript se usa así:
+
+get-service | where {$_}
+
+El $_ es el actual objecto que está pasando por el pipe.
+get-service | where {$_.status -eq "Running"}
+No es = para saber porque libro Powershell in Action. Es por un tema con C, C++ y C#
+
+Get-Help *comparison*
+Get-Help *operators*
+
+A partir de V3 se puede usar
+get-service | where {$PSItem.status -eq "Running"}
+
+Ahora cual es la forma más perfomante en esto:
+
+Get-Stuff | Sort | where -somestuff | out-file
+Get-Stuff | where -somestuff | Sort | out-file
+
+powershell.org
+El Foro, free ebooks, 
+
+Como trabaja el where
+A cada objeto le asigna una variable, 
+Evaluamos el codigo
+Si da OK, lo dejamos pasar.
+También se puede así 
+get-service | where status -eq "Running"
+
+Powershell on a month of Lunch / Chapter 9

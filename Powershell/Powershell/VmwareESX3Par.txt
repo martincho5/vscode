@@ -1,0 +1,55 @@
+Get-AdvancedSetting -Entity orca1.uade.edu.ar -Name VMFS3.UseATSForHBOnVMFS5 | Set-AdvancedSetting -Value 0 -Confirm:$false 
+Get-AdvancedSetting -Entity orca2.uade.edu.ar -Name VMFS3.UseATSForHBOnVMFS5 | Set-AdvancedSetting -Value 0 -Confirm:$false 
+Get-AdvancedSetting -Entity orca3.uade.edu.ar -Name VMFS3.UseATSForHBOnVMFS5 | Set-AdvancedSetting -Value 0 -Confirm:$false 
+Get-AdvancedSetting -Entity orca4.uade.edu.ar -Name VMFS3.UseATSForHBOnVMFS5 | Set-AdvancedSetting -Value 0 -Confirm:$false 
+Get-AdvancedSetting -Entity orca5.uade.edu.ar -Name VMFS3.UseATSForHBOnVMFS5 | Set-AdvancedSetting -Value 0 -Confirm:$false 
+
+Vms Online
+get-VM | Where-Object {$_.PowerState -eq "PoweredOn"} | Measure-Object
+
+Get-VM | Sort | Get-View -Property @("Name", "Config.GuestFullName", "Guest.GuestFullName") | Select -Property Name, @{N="Configured OS";E={$_.Config.GuestFullName}},  @{N="Running OS";E={$_.Guest.GuestFullName}} | Format-T
+able -AutoSize
+
+Get-Cluster "ClusterDC2" | Get-VM | sort Powerstate
+Get-Cluster "ClusterDC1" | Get-VM | sort Powerstate
+
+get-VM | Sort-Object -Property Name |
+Get-View -Property @("Name", "Config.GuestFullName", "Guest.GuestFullName") |
+Select -Property Name,
+    @{N="Configured OS";E={$_.Config.GuestFullName}}, 
+    @{N="Running OS";E={$_.Guest.GuestFullName}} |
+Export-Csv report.csv -NoTypeInformation -UseCulture
+
+
+$myCol = @()
+ForEach ($Cluster in Get-Cluster)
+    {
+        ForEach ($vmhost in ($cluster | Get-VMHost))
+        {
+            $VMView = $VMhost | Get-View
+                        $VMSummary = “” | Select HostName, ClusterName, MemorySizeGB, CPUSockets, CPUCores
+                        $VMSummary.HostName = $VMhost.Name
+                        $VMSummary.ClusterName = $Cluster.Name
+                        $VMSummary.MemorySizeGB = $VMview.hardware.memorysize / 1024Mb
+                        $VMSummary.CPUSockets = $VMview.hardware.cpuinfo.numCpuPackages
+                        $VMSummary.CPUCores = $VMview.hardware.cpuinfo.numCpuCores
+                        $myCol += $VMSummary
+                    }
+            }
+$myCol #| out-gridview
+
+
+
+$myCol = @()
+ForEach ($vmhost in Get-VMHost)
+   {
+        $VMView = $VMhost | Get-View
+        $VMSummary = “” | Select HostName, ClusterName, MemorySizeGB, CPUSockets, CPUCores
+        $VMSummary.HostName = $VMhost.Name
+        $VMSummary.MemorySizeGB = $VMview.hardware.memorysize / 1024Mb
+        $VMSummary.CPUSockets = $VMview.hardware.cpuinfo.numCpuPackages
+        $VMSummary.CPUCores = $VMview.hardware.cpuinfo.numCpuCores
+        $myCol += $VMSummary
+    }
+$myCol #| out-gridview
+

@@ -1,0 +1,13 @@
+Get-VM | Get-Snapshot | Select VM,Name,Description
+
+Get-Cluster "ClusterDC1" | Get-VM | sort Powerstate
+
+get-vm | Select Name, UsedSpaceGB, ProvisionedSpaceGB
+
+Get-View -ViewType VirtualMachine -Filter @{"Runtime.PowerState" ="poweredOn"} | Where { $_.Guest.GuestFullname} | Sort Name |Select-Object Name, @{N="NumCPU"; E={$_.Config.Hardware.NumCPU}}, @{N="MemoryMB"; E={$_.Config.Ha
+rdware.MemoryMB}},  @{N="VmHost"; E={$_.Runtime.host}}, @{N="PowerState"; E={$_.Runtime.PowerState}},  @{N="ConfiguredOS";E={$_.Guest.GuestFullName}}, @{N="InstalledOS";E={$_.Summary.Config.GuestFullName}} | Export-Csv 'C:\Temp\VMs_CPU_C
+ounts_LABS.csv' -NoTypeInformation -Force
+
+
+Get-VM | Sort | Get-View -Property @("Name", "Config.GuestFullName", "Guest.GuestFullName") | Select -Property Name, @{N="Configured OS";E={$_.Config.GuestFullName}},  @{N="Running OS";E={$_.Guest.GuestFullName}} | Format-T
+able -AutoSize

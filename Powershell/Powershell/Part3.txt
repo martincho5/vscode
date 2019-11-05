@@ -1,0 +1,100 @@
+Parte 3
+
+The Pipeline:
+
+El caracter Pipe (está en inglés puesto al lado del Enter)
+
+Sirve para conectar cmdlets para producir mejores resultados
+
+Lo que pasa es que lo que sale del Get-Service es una colección de objetos. Denominados Service Controllers
+Le envía a través del Pipe los objetos de servicios uno a la vez a través del pipeline (tubo). Que es lo que quieres hacer después con este servicio.
+
+OK traemos el servicio Bits
+Get-Service -name bits
+
+Ahora sabes que hay un comando para stopear el servicio 
+Stop-Service.
+Pero con el Pipe, busco el servicio y al obtener el objeto servicios bits le puedo decir que lo Stop-Service
+
+Get-Service -name bits | stop-service
+Get-Service -name bits | start-service -Passthru (me permite ver lo que terminó haciendo)
+
+Ojo, el pipeline es una herramienta poderosa y puede llevarnos a cometer error sonsos
+
+Que haría Get-Service | Stop-Service
+
+Powershell no te pregunta si estas seguro de hacer eso
+
+get-service | export-csv -Path f:\service.csv
+Todos savemos que es un CSV es un archivo separado por comando
+Si ven el help se puede cambiar el caracter delimitador.
+
+Si lo exportamos es porque queremos importarlos en algún momento después
+
+Otro exportador importante es a XML
+
+Get-process | Export-Clixml 
+
+Imaginemos que estamos sacando los datos un Servidor que está andando perfecto
+Y hago un snapshot de procesos.
+notepad
+calc
+
+Ahora quiero compara el buen servidor con el mal servidor
+Mas adelante veremos parentesis que lo que quiere decir es que haga esto primero.
+
+Compare-Object -RefernceObject (import-clixml c:\good.xml) -Diff (get-process) -Property name
+
+Esto se puede extender a los software en una Servidor o a los Parches de Windows.
+Ahora para exportar información
+Get-Service | out-file -Filepath f:\test.txt}
+
+Ahora, como obtengo el contenido de un archivo
+get-help *content*
+
+Get-Content F:\test.txt
+
+Ahora si quiero mandarlo a una impresora, 
+
+Ahora está el ConvertTo-CSV, la diferencia con export-csv es que el export, termina ahí (va a un arhivo) en cambio el ConvertTo-CSV queda en Pipe por si lo queremos utilizar después
+Ahora está el ConvertTo-html y le doy propiedades
+
+Get-Service | ConvertTo-html -Property name,status
+Get-Service | ConvertTo-html -Property name,status | out-file f:\test.htm
+
+OK, sabemos que no sabemos que hace todos los comandos y como no queremos enterarnos después que nos pase un error (posiblemente grave) existe es -whatif
+
+get-Service | stop-service -whatif
+
+Otra opción es -confirm
+
+get-Service | stop-service -confirm
+
+Es similar a whatif pero pregunta por cada una de las acciones antes de realizarla.
+
+En la vida real lo usamos mas o menos así
+
+Queremos stopear un servicio que el algo así como bits o bi entonces
+
+get-Service -DisplayName *bi* | stop-service -whatif
+
+oooo eran 4 y no 1 solo como yo quería
+
+get-Service -DisplayName *bi* | stop-service -confirm
+
+Cuando queremos extender el PowerShell tenemos como plugins, snapin llamados modules
+
+Tenemos el comando Get-Module que nos muestra los módulos instalados
+
+Get-Module -ListAvailable
+
+Funciona bien a partir de PowerShell v3 y Windows 8 con las RSAT de Windows 8
+
+Si tenemos las RSAT Tools instaladas tenes el Modulo de ActiveDirectory (los cmdlets y providers)
+
+Si ejecuto Get-Module directo me dice los módulos cargados en este momento
+
+Cuando ejecuto el comando por consola por primera vez lo carga rápidamente sin necesidad de que lo instanciemos
+En v2 esto no pasaba, ni en el get-help. El módulo se tenía que importar
+
+

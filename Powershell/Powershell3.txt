@@ -1,0 +1,22 @@
+$ComputersPath = "c:\utils\computers.txt"
+$LogPath = "c:\utils"
+
+$Log = @()
+ForEach ($Computer in (Get-Content $ComputersPath))
+{   If ($Computer)
+    {   ForEach ($Drive in "C","D")
+        {   If (Test-Path "\\$Computer\$($Drive)`$\" -ErrorAction Stop)
+            {   $Log += ForEach ($PST in ($PSTS = Get-ChildItem "\\$Computer\$($Drive)`$\" -Include *.pst -Recurse -Force -erroraction silentlycontinue))
+                {   New-Object PSObject -Property @{
+                        ComputerName = $Computer
+                        Path = $PST.DirectoryName
+                        FileName = $PST.BaseName
+                        Size = "{0:N2} MB" -f ($PST.Length / 1mb)
+                    }
+                }
+            }    
+        }
+    }
+}
+
+$Log | Export-Csv $LogPath\PSTLog.csv -NoTypeInformation

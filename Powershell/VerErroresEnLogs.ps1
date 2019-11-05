@@ -1,0 +1,1 @@
+﻿Get-Content "F:\Temp\LogsPigmea\Full.txt" | Select-String -Pattern error -AllMatches -SimpleMatch | Group -NoElement | Export-Csv .\Logs.csv

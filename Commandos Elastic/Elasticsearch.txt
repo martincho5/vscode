@@ -1,0 +1,107 @@
+logstash-2015.09.29 4, 1, 3, 0 
+
+
+curl -XPOST 'localhost:9200/_cluster/reroute' -d '{
+        "commands" : [ {
+              "allocate" : {
+                  "index" : "t37", 
+                  "shard" : $shard, 
+                  "allow_primary" : true
+              }
+            }
+        ]
+    }'
+
+
+java -cp lucene-core*.jar -ea:org.apache.lucene... org.apache.lucene.index.CheckIndex /opt/elasticsearch-data/linko_elasticsearch/nodes/0/indices/inbot_activities_v29/2/index/ -fix
+
+
+java -cp lucene-core-x.x.x.jar -ea:org.apache.lucene... org.apache.lucene.index.CheckIndex :/var/lib/elasticsearch/elasticsearch/nodes/0/indices/logstash-2015.09.29/4/index/ -fix
+
+curl -XDELETE 'http://localhost:9200/logstash-2015.09.29'
+curl -XGET http://localhost:9200/_cat/shards 
+curl -XGET http://localhost:9200/_cluster/health?pretty
+curl localhost:9200/_cache/clear (borrar cache)
+curl -XPOST 'localhost:9200/logstash-2015*/_close'
+
+
+
+
+curl -XDELETE 'http://localhost:9200/.monitoring-kibana-6-2018.04.04'
+.monitoring-kibana-6-2018.04.04
+curl -XDELETE 'http://localhost:9200/.monitoring-kibana-6-2018.03.31'
+curl -XDELETE 'http://localhost:9200/.monitoring-kibana-6-2018.04.01'
+curl -XDELETE 'http://localhost:9200/.monitoring-kibana-6-2018.04.05'
+curl -XDELETE 'http://localhost:9200/.monitoring-kibana-6-2018.04.06'
+curl -XDELETE 'http://localhost:9200/.monitoring-kibana-6-2018.04.02'
+curl -XDELETE 'http://localhost:9200/.monitoring-kibana-6-2018.04.03'
+
+
+curl -XDELETE 'http://localhost:9200/.monitoring-es-6-2018.04.06'
+curl -XDELETE 'http://localhost:9200/.monitoring-es-6-2018.04.03'
+curl -XDELETE 'http://localhost:9200/.monitoring-es-6-2018.04.05'
+
+curl -XDELETE 'http://localhost:9200/.monitoring-es-6-2018.04.01'
+curl -XDELETE 'http://localhost:9200/.monitoring-es-6-2018.03.31'
+curl -XDELETE 'http://localhost:9200/.monitoring-es-6-2018.04.04'
+curl -XDELETE 'http://localhost:9200/.monitoring-es-6-2018.04.02' 
+
+
+.monitoring-kibana-6-2018.04.05 0     p      STARTED          0     191b 10.20.100.20 elastic1
+.monitoring-kibana-6-2018.04.05 0     r      UNASSIGNED
+.monitoring-kibana-6-2018.04.06 0     p      STARTED         14   74.2kb 10.20.100.20 elastic1
+.monitoring-kibana-6-2018.04.06 0     r      UNASSIGNED
+.monitoring-kibana-6-2018.04.02 0     r      UNASSIGNED
+.monitoring-kibana-6-2018.04.02 0     p      UNASSIGNED
+.monitoring-kibana-6-2018.04.03 0     p      STARTED          0     162b 10.20.100.20 elastic1
+.monitoring-kibana-6-2018.04.03 0     r      UNASSIGNED
+
+
+curl -XPUT 'localhost:9200/logstash-2018.06.21/_settings' -d '{"settings": {"index.unassigned.node_left.delayed_timeout": "30s"}}'
+curl -XPUT 'localhost:9200/logstash-2018.06.21/_settings' -d '{"number_of_replicas": 0}'
+curl -XPUT 'localhost:9200/logstash-2018.06.18/_settings' -d '{"settings": {"index.unassigned.node_left.delayed_timeout": "30s"}}'
+curl -XPUT 'localhost:9200/logstash-2018.06.18/_settings' -d '{"number_of_replicas": 0}'
+curl -XPUT 'localhost:9200/logstash-2018.06.27/_settings' -d '{"settings": {"index.unassigned.node_left.delayed_timeout": "30s"}}'
+curl -XPUT 'localhost:9200/logstash-2018.06.27/_settings' -d '{"number_of_replicas": 0}'
+curl -XPUT 'localhost:9200/logstash-2018.06.25/_settings' -d '{"settings": {"index.unassigned.node_left.delayed_timeout": "30s"}}'
+curl -XPUT 'localhost:9200/logstash-2018.06.25/_settings' -d '{"number_of_replicas": 0}'
+curl -XPUT 'localhost:9200/logstash-2018.07.01/_settings' -d '{"settings": {"index.unassigned.node_left.delayed_timeout": "30s"}}'
+curl -XPUT 'localhost:9200/logstash-2018.07.01/_settings' -d '{"number_of_replicas": 0}'
+curl -XPUT 'localhost:9200/logstash-2018.06.14/_settings' -d '{"settings": {"index.unassigned.node_left.delayed_timeout": "30s"}}'
+curl -XPUT 'localhost:9200/logstash-2018.06.14/_settings' -d '{"number_of_replicas": 0}'
+curl -XPUT 'localhost:9200/logstash-2018.06.12/_settings' -d '{"settings": {"index.unassigned.node_left.delayed_timeout": "30s"}}'
+curl -XPUT 'localhost:9200/logstash-2018.06.12/_settings' -d '{"number_of_replicas": 0}'
+curl -XPUT 'localhost:9200/logstash-2018.05.25/_settings' -d '{"settings": {"index.unassigned.node_left.delayed_timeout": "30s"}}'
+curl -XPUT 'localhost:9200/logstash-2018.05.25/_settings' -d '{"number_of_replicas": 0}'
+curl -XPUT 'localhost:9200/logstash-2018.04.29/_settings' -d '{"settings": {"index.unassigned.node_left.delayed_timeout": "30s"}}'
+curl -XPUT 'localhost:9200/logstash-2018.04.29/_settings' -d '{"number_of_replicas": 0}'
+
+curl -XPUT 'localhost:9200/_cluster/settings' -d'{ "transient":{ "cluster.routing.allocation.enable" : "all"}}'
+
+curl -XGET localhost:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason| grep UNASSIGNED
+
+curl -XPUT 'http://localhost:9200/_all/_settings?preserve_existing=true' -d '{"index.number_of_replicas" : "0"}'
+
+curl -XGET 'http://localhost:9200/_cat/indices/logstash-2017.02*?v&s=index'
+curl -XDELETE 'http://localhost:9200/logstash-2017.02.01'
+curl -XDELETE 'http://localhost:9200/logstash-2017.02.*' Borra todos los indeces que empiezan con logstash-2017.02.*
+
+curl -XDELETE 'http://localhost:9200/.watcher-history-6-*'
+curl -XDELETE 'http://localhost:9200/.triggered_watches'
+
+curl -XGET 'http://localhost:9200/_cat/indices/logstash-2017.*?v&s=index'
+-----------------------------------------------------------------------------------------------------------
+Upgrade from 5.6 to 6.1
+
+curl -XPUT 'localhost:9200/.kibana-6?pretty' -H 'Content-Type: application/json' -d'{"settings" : {"number_of_shards" : 1,"index.mapper.dynamic": false},"mappings" : {"doc": {"properties": {"type": {"type": "keyword"},"updated_at": {"type": "date"},"config": {"properties": {"buildNum": {"type": "keyword"}}},"index-pattern": {"properties": {"fieldFormatMap": {"type": "text"},"fields": {"type": "text"},"intervalName": {"type": "keyword"},"notExpandable": {"type": "boolean"},"sourceFilters": {"type": "text"},"timeFieldName": {"type": "keyword"},"title": {"type": "text"}}},"visualization": {"properties": {"description": {"type": "text"},"kibanaSavedObjectMeta": {"properties": {"searchSourceJSON": {"type": "text"}}},"savedSearchId": {"type": "keyword"},"title": {"type": "text"},"uiStateJSON": {"type": "text"},"version": {"type": "integer"},"visState": {"type": "text"}}},"search": {"properties": {"columns": {"type": "keyword"},"description": {"type": "text"},"hits": {"type": "integer"},"kibanaSavedObjectMeta": {"properties": {"searchSourceJSON": {"type": "text"}}},"sort": {"type": "keyword"},"title": {"type": "text"},"version": {"type": "integer"}}},"dashboard": {"properties": {"description": {"type": "text"},"hits": {"type": "integer"},"kibanaSavedObjectMeta": {"properties": {"searchSourceJSON": {"type": "text"}}},"optionsJSON": {"type": "text"},"panelsJSON": {"type": "text"},"refreshInterval": {"properties": {"display": {"type": "keyword"},"pause": {"type": "boolean"},"section": {"type": "integer"},"value": {"type": "integer"}}},"timeFrom": {"type": "keyword"},"timeRestore": {"type": "boolean"},"timeTo": {"type": "keyword"},"title": {"type": "text"},"uiStateJSON": {"type": "text"},"version": {"type": "integer"}}},"url": {"properties": {"accessCount": {"type": "long"},"accessDate": {"type": "date"},"createDate": {"type": "date"},"url": {"type": "text","fields": {"keyword": {"type": "keyword","ignore_above": 2048}}}}},"server": {"properties": {"uuid": {"type": "keyword"}}},"timelion-sheet": {"properties": {"description": {"type": "text"},"hits": {"type": "integer"},"kibanaSavedObjectMeta": {"properties": {"searchSourceJSON": {"type": "text"}}},"timelion_chart_height": {"type": "integer"},"timelion_columns": {"type": "integer"},"timelion_interval": {"type": "keyword"},"timelion_other_interval": {"type": "keyword"},"timelion_rows": {"type": "integer"},"timelion_sheet": {"type": "text"},"title": {"type": "text"},"version": {"type": "integer"}}},"graph-workspace": {"properties": {"description": {"type": "text"},"kibanaSavedObjectMeta": {"properties": {"searchSourceJSON": {"type": "text"}}},"numLinks": {"type": "integer"},"numVertices": {"type": "integer"},"title": {"type": "text"},"version": {"type": "integer"},"wsState": {"type": "text"}}}}}}}'
+
+
+curl -XDELETE 'localhost:9200/.kibana-6?pretty'
+
+curl -XPOST 'localhost:9200/_reindex?pretty' -H 'Content-Type: application/json' -d'{"source": {"index": ".kibana"},"dest": {"index": ".kibana-6"},"script": {"inline": "ctx._source = [ ctx._type : ctx._source ]; ctx._source.type = ctx._type; ctx._id = ctx._type + \":\" + ctx._id; ctx._type = \"doc\"; ","lang": "painless"}}'
+
+
+curl -XPOST 'localhost:9200/_aliases?pretty' -H 'Content-Type: application/json' -d'{"actions" : [{ "add":  { "index": ".kibana-6", "alias": ".kibana" } },{ "remove_index": { "index": ".kibana" } }]}'
+
+
+

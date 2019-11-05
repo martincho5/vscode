@@ -1,0 +1,75 @@
+No tener miedo PowerShell
+
+Jeffrey Snover / Inventor del PowerShell
+
+Como empezar con PowerShell
+
+Lider de arquitectura de Windows 2012 R2
+
+Jason Helmick / Learn Windows IIS in a Month of
+PowerShell para IIS
+
+Mientras realicemos esto, sería bueno que vaya tipeando los comandos conmigo
+
+
+Necesitamos una estrategia de automatización y decían, si tenemos VBScript
+Necesitaban un Shell interactivo
+Las cosas que hago en forma repetitiva, porque no las pongo en un script?
+Ahora quiero parametrizarlo
+Ahora la quiero para hacerlo en miles de máquinas
+Admin Development Model
+1- El espipirtu de exploración
+2- Que tan Fun escala
+Automate
+Es hacer varias cosas y decir Save (usar la línea de comando en vez de el mouse) clic and run.
+Cuando los escenarios son complejos las interfaz gráfica no ayuda
+Versiones de PowerShell
+
+V3 - Windows 8 y 2012
+V2 - Windows 7 y 2008 -(puede tener V3) (Se pueden instalar en XP y 2003)
+V5 - Windows 10
+
+Release Note - Download Windows Management Framework
+
+Ejecutar PowerShell - Poner PowerShell (Pin en el Desktop)
+2 tipos (x86) y PowerShell. Usar el no x86
+
+Estar confortable con la consola.
+Customizarla.
+Hacer una run as adminstrator primero - Error común
+
+Diferencia entre los caracteres, ver bien esos caracteres (´')
+Powershell tiene una Model Composition
+Los comandos son muy pequeños y se usa el pipeline para hacer cosas más grandes
+No hacemos terms, los llamamos comandos.
+Nos son comandos con cmdlet
+Cmdlets: Verb - Noun 
+Los comandos están compuestos por Verbo - Sustantivo
+Como se pensó:
+Primero se quiso traer la línea de comando y herramientas de UNIX en windows
+Unix basado en documentación y Windows en API
+Cuando tubo BASH,AWK,SED, en windows no ayudaba mucho
+GREP no sirve para registry
+En windows no hay muchos texto
+AS400 production oriented enviroment, bien definido verb-noun y bien definidos los parametris
+
+Uno entiende el esquema y le permite hacerlo uno tras otro
+antes C:\ ahora set-location
+antes dir ahora get-childitem
+antes cls ahora clear-host
+
+Nos dejan de funcionar los comandos anteriores
+Ahora en unix ls tambien funciona y clear
+Como saben que otros administradores pueden ir a windowsa realizar algo, si hicieron Alias
+md pepe
+mkdir pepe
+help, man
+gal alias
+Se siguen usando todos los comandos de windows
+ping, notepad, calc, mspaint
+
+gal g*
+gsv
+gal *sv
+
+get-alias -Definition get-process

@@ -1,0 +1,1 @@
+Import-CSV -Path .\csv_file.csv | ForEach-Object { Get-ADUser -Filter "Name -like '$($_.name)'" | select Name,SamAccountName } | Export-CSV .\results.csv -NoTypeInformation
