@@ -1,0 +1,101 @@
+You cannot call a method on a null-valued expression.
+Fin script 12/17/2018 14:54:54
+You cannot call a method on a null-valued expression.
+Fin script 12/17/2018 14:58:15
+You cannot call a method on a null-valued expression.
+Fin script 12/17/2018 14:58:29
+You cannot call a method on a null-valued expression.
+Fin script 12/17/2018 14:58:32
+You cannot call a method on a null-valued expression.
+Fin script 12/17/2018 14:59:20
+You cannot call a method on a null-valued expression.
+Fin script 12/17/2018 14:59:38
+You cannot call a method on a null-valued expression.
+Fin script 12/17/2018 15:00:12
+Fin script 12/17/2018 15:05:34
+Fin script 12/17/2018 15:05:48
+Fin script 12/17/2018 15:06:03
+Fin script 12/17/2018 15:08:55
+Fin script 12/17/2018 15:10:09
+Fin script 12/17/2018 15:11:05
+Fin script 12/17/2018 15:20:14
+Fin script 12/17/2018 15:24:25
+Exception calling "ExecuteReader" with "0" argument(s): "ORA-12570: Network Session: Unexpected packet read error"
+Fin script 12/17/2018 16:33:54
+Insufficient access rights to perform the operation
+Fin script 12/17/2018 16:36:05
+Exception calling "GetString" with "1" argument(s): "Column contains NULL data"
+Fin script 12/17/2018 16:41:20
+Exception calling "GetString" with "1" argument(s): "Column contains NULL data"
+Fin script 12/17/2018 16:52:09
+Exception calling "GetString" with "1" argument(s): "Column contains NULL data"
+Fin script 12/17/2018 16:57:02
+Exception calling "GetString" with "1" argument(s): "Column contains NULL data"
+Fin script 12/17/2018 17:00:20
+Exception calling "GetString" with "1" argument(s): "Column contains NULL data"
+Fin script 12/17/2018 17:14:45
+Exception calling "GetString" with "1" argument(s): "Column contains NULL data"
+Fin script 12/17/2018 17:15:44
+Fin script 12/17/2018 17:17:59
+Fin script 12/17/2018 17:23:47
+Fin script 12/17/2018 17:27:40
+Comienzo script 12/18/2018 10:34:59
+Fin script 12/18/2018 10:35:00
+Comienzo script 12/18/2018 10:36:39
+replace
+Fin script 12/18/2018 10:36:39
+Comienzo script 12/18/2018 10:38:32
+replace
+Fin script 12/18/2018 10:38:33
+Comienzo script 12/18/2018 10:40:12
+replace
+Fin script 12/18/2018 10:40:12
+Comienzo script 12/18/2018 10:40:28
+replace
+Fin script 12/18/2018 10:40:29
+Comienzo script 12/18/2018 10:46:48
+replace
+Fin script 12/18/2018 10:46:48
+Comienzo script 12/18/2018 10:50:45
+replace
+Fin script 12/18/2018 10:50:45
+Comienzo script 12/18/2018 10:51:26
+replace
+Fin script 12/18/2018 10:51:26
+Comienzo script 12/18/2018 10:53:01
+replace
+Fin script 12/18/2018 10:53:02
+Comienzo script 12/18/2018 10:54:23
+replace
+Fin script 12/18/2018 10:54:24
+Comienzo script 12/18/2018 10:56:24
+replace
+Fin script 12/18/2018 10:56:25
+Comienzo script 12/18/2018 10:56:47
+replace
+Fin script 12/18/2018 10:56:48
+Comienzo script 12/18/2018 10:57:28
+Fin script 12/18/2018 10:57:28
+Comienzo script 12/18/2018 11:17:01
+Fin script 12/18/2018 11:17:03
+Comienzo script 12/18/2018 11:23:49
+Fin script 12/18/2018 11:23:52
+Comienzo script 12/18/2018 11:25:11
+Fin script 12/18/2018 11:25:12
+Comienzo script 12/18/2018 11:31:06
+Fin script 12/18/2018 11:31:08
+Comienzo script 12/18/2018 11:40:13
+Fin script 12/18/2018 11:40:15
+Comienzo script 12/18/2018 11:47:34
+Fin script 12/18/2018 11:47:36
+Comienzo script 12/18/2018 17:57:17
+Exception calling "ExecuteReader" with "0" argument(s): "ORA-00942: table or view does not exist"
+Fin script 12/18/2018 17:57:18
+Comienzo script 12/18/2018 18:06:23
+Fin script 12/18/2018 18:06:26
+Comienzo script 12/19/2018 14:13:19
+Fin script 12/19/2018 14:13:21
+Comienzo script 12/19/2018 14:14:21
+Fin script 12/19/2018 14:14:23
+Comienzo script 12/19/2018 16:31:58
+Fin script 12/19/2018 16:32:00
