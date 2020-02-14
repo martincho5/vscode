@@ -1,0 +1,5 @@
+# Connect-AzAccount
+# The SubscriptionId in which to create these objects
+$SubscriptionId = ''
+
+Set-AzContext -SubscriptionId $subscriptionId 
