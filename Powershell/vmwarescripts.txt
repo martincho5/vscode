@@ -1,0 +1,10 @@
+PowerCLI C:\Program Files\VMware\Infrastructure\vSphere PowerCLI> get-vm | where
+ {$_.PowerState -eq "PoweredOn"} | measure-object
+
+
+Count    : 81
+Average  :
+Sum      :
+Maximum  :
+Minimum  :
+Property :

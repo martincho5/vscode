@@ -1,0 +1,5 @@
+$MgmtServer = Get-SCOMManagementServer "boreal2.uade.edu.ar"
+Get-SCOMAgent -ManagementServer $MgmtServer
+Get-SCOMAgent -ManagementServer $MgmtServer | measure
+Get-SCOMAgent -ManagementServer $MgmtServer | sort-object -Property DisplayName
+get-scomclass -Displayname “UNIX/Linux Computer” |get-scomclassinstance | select Displayname | sort displayname

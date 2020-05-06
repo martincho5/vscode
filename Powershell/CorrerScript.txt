@@ -1,0 +1,1 @@
+cscript DeleteProfiles.vbs /E Administrator.UADE,Default*,supuser,IUSR_UADE,useradm,Administrator,mjferrin*,mjferrini,All* /L Logmferrini.txt

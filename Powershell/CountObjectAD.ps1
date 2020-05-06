@@ -1,0 +1,1 @@
+Get-ADObject -Filter {name -like '*'} -server wdc01 -SearchBase 'DC=contoso,DC=com,DC=ar' -ResultSetSize $null | Measure-Object

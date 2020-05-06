@@ -1,0 +1,114 @@
+Parte 2 - El sistema de Help
+
+Constesta todo. El help
+Porque necesito el Help
+No se todo, cual fie la idea
+Nadie recuerda todo. No memorizar.
+No hay muchas diferencia entre los expertos y los nuevos.
+Los expertos se figuran las cosas.
+Aprendemos un esquema y usamos eso
+
+236 en V2 cmdlet
+610 en Exchange
+500 en sharepoint
+
+No aprendemos de memoria.
+La unica forma de tener exito es tener un buen help
+
+Update el Help. Este actualizado. 
+El help es largo.
+Update Help model. Metadada, es posible bajar de internet.
+En V2 el ejemplo puede ser erroneo. El Help se actualiza mucho apenas
+
+WQL - Search nunca se encuentra en internet.
+Two days later hay un.
+Necesita un 
+
+update-help -Force y baja todo con respecto y una barra de progreso
+Se puede grabar y update el resto.
+
+Diferencia entre Get-Help y help
+uno va hasta el final y el otro 
+
+No memoricen lo que hacemos,
+Quiero saber si hay algún cmdlet que me permite hacer cosas sobre los servicios
+
+Astericos es una WildCard (un comodín, que tenga cualquier cosa antes y después)
+
+get-help *service*
+
+El que me de una lista de los servicios
+
+get-help g*service*
+Se busca por el sustantivo
+get-help g*ADComputer*
+
+Muestra el Help en la version simple.
+
+Se pueden buscar los verbos que son los usados en los comandos
+Pero, quiero saber cuantos son:
+get-verb | measure
+
+Son solo 98.
+
+get-help get-service -Detail
+
+Nos muestra cada parámetro con una explicación y también tenemos ejemplos.
+Cuantos ejemplos creen (11 son)
+
+Lo podemos traer ordenados, filtrados, 
+
+-examples
+
+Solos los ejemplos
+
+La diferencia entre full y Detail del help es que en cada parametro en full aparecen opciones específicas y el tema de Pipeline.
+
+Está también la version get-help get-service -Online (abre un browser)
+
+get-help get-service -showwindow y aparece en una pantalla aparte
+El copy paste es right clic y right clic
+
+Se ve 3 veces. net use, net view son parameter set.
+Son diferentes seteos de parametros.
+ que nobre es este, todos o el id.
+ 
+ uno displayname. otro empieza con nombre
+ 
+-Name < > Like Pacman. Son los valores que le podemos dar al parametro
+alphnumeric
+String[] multiples valores con coma separados.
+
+Get-Service -Name bits
+Get-Service -Name bits, bfe
+
+Get-Service -Name b*, c* 
+
+Cuando están los [] significa opcional.
+Fijemenos en DisplayName (segundo tipo de valores) no tiene los []. Se refiere al campo largo del nombre del servicio
+Nadie se acuerda del Nombre y tampoco el displayname entero
+Get-Service -DisplayName Bit*
+
+Cuando tenemos un parametro con [[Name]] no tenemos que especificar ese parametro, es como el default.
+Ojo cuando escribimos Scripts debemos utilizar todos los parámetros para que pueda explicarse bien que es lo que va a realizar el script.
+
+Usar el TAB y Shift+TAB para volver atrás
+
+Necesito ver los últimos 5 errores de mi sistema
+
+get-help *eventlog*
+
+Es facil darse cuenta que hace.
+Primero veo el help para ver la symtaxis
+Veo que el string es mandatory.
+
+Get-Eventlog -Logname System -Newest 3 -EntryType Error
+
+Conceptual topic. el About_Eventlogs
+; es un statement separator.
+Es hace esto y luego hacer esto otro.
+
+Get-Help about_* y nos da informacion sobre ese tema especifico.
+
+Get-help por Categoria
+Get-Help -Category ASDF da error pero muestra las categorias

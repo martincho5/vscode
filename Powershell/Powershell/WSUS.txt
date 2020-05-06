@@ -1,0 +1,6 @@
+[void][reflection.assembly]::LoadWithPartialName("Microsoft.UpdateServices.Administration")            
+$wsus = [Microsoft.UpdateServices.Administration.AdminProxy]::getUpdateServer("FRIGOBAR",$False)
+$wsus.GetComputerTargetGroups()
+$mygroup = $wsus.GetComputerTargetGroups() | ? {$_.Name -eq "Produccion"}
+$mygroup.GetComputerTargets() | select FullDomainName
+$mygroup.GetComputerTargets() | select FullDomainName | sort-object -Property FullDomainName
