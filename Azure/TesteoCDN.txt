@@ -1,0 +1,16 @@
+https://videosvirt.blob.core.windows.net/<container-name>
+
+Install-Module -Name Az -AllowClobber
+Uninstall-AzureRM
+Connect-AzAccount
+videosuade@hotmail.com Videos y Media UADE b29f34a8-df5e-4795-92cf-32147dc35984 AzureCloud
+Get-AzStorageAccount
+Get-AzStorageAccount -StorageAccountName videosvirt -ResourceGroupName uadestreaming
+
+
+$ctx = New-AzStorageContext -StorageAccountName 'videosvirt' -StorageAccountKey 'KSRsyjebsyXaWmQMc6IvC7gqXlinowY56msdJ0oNpJkiesRFgswB+Yh09Gf4jzrwdHxJmcnqZ6uQ7dpG1594IQ=='
+Get-AzStorageContainer -Context $ctx
+
+Get-AzStorageContainer -Context $ctx | Get-AzStorageBlob
+
+Get-AzStorageContainer -Context $ctx | Get-AzStorageBlob | Where-Object {$_.Name -like "1018087*"}
