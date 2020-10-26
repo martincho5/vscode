@@ -1,6 +1,6 @@
 import requests
 
-#request = requests.get('https://uadedesa.kanbantool.com/api/v3/users/current.json?access_token=M2U263DDN63Y')
+#request = requests.get('https://uadedesa.kanbantool.com/api/v3/users/current.json?access_token=######')
 #print(request.text)
 
 #tableros_json = request.json()
@@ -9,7 +9,7 @@ import requests
 #    print(p['name'],p['id'])
 #341513
 #/boards/:board_id/preload.json
-tecnologia = requests.get('https://uadedesa.kanbantool.com/api/v3//boards/341513/preload.json?access_token=M2U263DDN63Y')
+tecnologia = requests.get('https://uadedesa.kanbantool.com/api/v3//boards/341513/preload.json?access_token=######')
 #print(tecnologia.text)
 tecnologia_json = tecnologia.json()
 #print(tecnologia_json)
@@ -18,7 +18,7 @@ tecnologia_json = tecnologia.json()
 for tec in tecnologia_json['workflow_stages']:
    print(tec['name'],tec['id'])
 
-tecnologiatasks = requests.get('https://uadedesa.kanbantool.com/api/v3/boards/341513.json?access_token=M2U263DDN63Y')
+tecnologiatasks = requests.get('https://uadedesa.kanbantool.com/api/v3/boards/341513.json?access_token=#####')
 #print(tecnologia.text)
 tecnologiatarea_json = tecnologiatasks.json()
 #print(tecnologiatarea_json)
@@ -29,7 +29,7 @@ reqpost = tareas + idTarea + tarea2
 print(reqpost)
 fcompletados = open("completadas.txt","w")
 fpendientes = open("pendientes.txt","w")
-#archivartarea = requests.post('https://uadedesa.kanbantool.com/api/v3/task/24863408.json?access_token=M2U263DDN63Y')
+#archivartarea = requests.post('https://uadedesa.kanbantool.com/api/v3/task/24863408.json?access_token=#####')
 for tec in tecnologiatarea_json['tasks']:
    if tec['workflow_stage_id'] == 2584763:
       #Trae las tareas que están en estado Completadas
