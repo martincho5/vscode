@@ -1,0 +1,1 @@
+Get-UnifiedGroup RD_* | Select-Object DisplayName | Export-CSV C:\XXXX\gruposrd.csv
