@@ -2,7 +2,7 @@
 $fechaInicio = 'Comienzo script ' + $fecha 
 Add-Content -Path "C:\Procesos\LOGS\GrupoADDocentesHorarios\LogADGrupoDocHorarios.txt" -Value $fechaInicio
 try{
-    Get-ADGroupMember -Identity 'DocentesHorarios' -Server 'wdcuade2.xxx.xx.xx' | ForEach-Object {Remove-ADGroupMember "DocentesHorarios" $_ -Confirm:$false}
+    Get-ADGroupMember -Identity 'DocentesHorarios' -Server 'ServerDC.xxx.xx.xx' | ForEach-Object {Remove-ADGroupMember "DocentesHorarios" $_ -Confirm:$false}
 }
 catch{
     Add-Content -Path "C:\Procesos\LOGS\GrupoADDocentesHorarios\LogADGrupoDocHorarios.txt" -Value $_

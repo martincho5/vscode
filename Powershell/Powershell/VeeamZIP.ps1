@@ -8,10 +8,10 @@
 ##################################################################
 
 # Names of VMs to backup separated by semicolon (Mandatory)
-$VMNames = 'CACHALOTE3','WDCUADE12','FRANCA','CUVIER','ROAZ2','CALDERON1','CUVIER1'
+$VMNames = 'XXX','XXX','FRANCA','CUVIER','ROAZ2','CALDERON1','CUVIER1'
 
 # Name of vCenter or standalone host VMs to backup reside on (Mandatory)
-$HostName = "rorcual2.uade.edu.ar"
+$HostName = "servidor.domain"
 
 # Directory that VM backups should go to (Mandatory; for instance, C:\Backup)
 $Directory = "E:\BackupServidores"
@@ -40,13 +40,13 @@ $Retention = "TomorrowNight"
 $EnableNotification = $True
 
 # Email SMTP server
-$SMTPServer = "aspmail.uade.edu.ar"
+$SMTPServer = "servidormail"
 
 # Email FROM
-$EmailFrom = "Veeambkp@uade.edu.ar" 
+$EmailFrom = "Veeambkp@domain" 
 
 # Email TO
-$EmailTo = "Tecnologia@uade.edu.ar"
+$EmailTo = "XXX@domain"
 
 # Email subject
 $EmailSubject = "Backup VMs con VeeamZip"

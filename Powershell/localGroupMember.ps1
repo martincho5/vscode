@@ -108,10 +108,4 @@ PROCESS {
     }
 }
 
-Get-LocalGroupMembers -server CACHALOTE1
-Get-LocalGroupMembers -server CACHALOTE2
-Get-LocalGroupMembers -server CACHALOTE3
-Get-LocalGroupMembers -server BRYDE1
-Get-LocalGroupMembers -server BRYDE2
-Get-LocalGroupMembers -server BRYDE3
-Get-LocalGroupMembers -server BRYDE4
+Get-LocalGroupMembers -server XXXX

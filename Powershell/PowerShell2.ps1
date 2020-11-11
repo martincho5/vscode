@@ -10,13 +10,13 @@ Get-EventLog -LogName Security -InstanceID 682 | Select-Object Timegenerated, En
 
 Get-EventLog -LogName Security -InstanceID 682 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
 
-Get-EventLog -COMPUTERNAME CACHALOTE1 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
-Get-EventLog -COMPUTERNAME CACHALOTE2 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
-Get-EventLog -COMPUTERNAME CACHALOTE3 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
-Get-EventLog -COMPUTERNAME Bryde1 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
-Get-EventLog -COMPUTERNAME Bryde2 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
-Get-EventLog -COMPUTERNAME Bryde3 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
-Get-EventLog -COMPUTERNAME Bryde4 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
+Get-EventLog -COMPUTERNAME XX1 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
+Get-EventLog -COMPUTERNAME XX2 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
+Get-EventLog -COMPUTERNAME XX3 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
+Get-EventLog -COMPUTERNAME XX1 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
+Get-EventLog -COMPUTERNAME XX2 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
+Get-EventLog -COMPUTERNAME XX3 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
+Get-EventLog -COMPUTERNAME XX4 -LogName Security -InstanceID 538 | Where-Object { $_.message -match 'sdopazo' } | Format-List -Property *
 
 
 Get-EventLog -LogName Security -InstanceID 4724, 627, 628, 4723 | Select-Object EventID, MachineName, Message, TimeGenerated | Export-Csv d:\temp\event.csv
