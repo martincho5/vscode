@@ -1,2 +1,8 @@
 KB2655992
 Get-HotFix | Where {$_.HotfixID -like "KB2655992"}
+
+wmic qfe list brief /format:table
+
+Windows/Servicing/packages
+Buscar el .mum en el package sin numero y abrir con el notepador VScode se bucar pemanent con "removable" (grabamos)
+Y aparece el uninstall syste
