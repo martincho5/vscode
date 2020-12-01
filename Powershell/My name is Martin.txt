@@ -1,0 +1,10 @@
+My name is Martin
+I live in Argentina
+I have more than 20 years of experience in the technology Industry.
+I'm Currently the Head of technology at UADE, Argentine University of Enterprise with a team of 5 people reporting to me.
+In the last 4 years, I HAVE also worked at Mobeats as Microsoft Infrastracture Consultant.
+Through my profesional carrer i have been involveD in different types of Infrastracture project, such DataCenter, Virtualization, Disaster Recovery Plan, Cloud Migration and Automation. Also I'm responsible FOR all the application enviroments (Dev, QA, UAT, Production) and the desgin of high availability and fault tolerance of the applications.
+I have developED extended knowledge of Microsoft Infrastracture (on premise and Cloud) as well as Open source Technologies such as Python, Docker and most recently Ansible
+I'm Looking forward to hearing from you bye 
+
+(ONLY ONE BYE; YO DIRIA SOLO THANK YOU)

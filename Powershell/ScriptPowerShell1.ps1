@@ -1,4 +1,0 @@
-$Attachment = "c:\Tools\Archivos.csv"
-$DateToCompare = (Get-date).AddDays(-1)
-Get-Childitem �recurse | where-object {$_.lastwritetime �gt $DateToCompare} | Export-CSV $Attachment
-Send-MailMessage -from "CACAWUATE <XXX@domain>" -to "XXX <XXX@domain>" -subject "Archivos Modificados Ayer" -body "Attach con los archivos modificados ayer." -Attachment $Attachment -smtpServer aspmail.uade.edu.ar

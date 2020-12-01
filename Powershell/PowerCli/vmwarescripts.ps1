@@ -1,0 +1,1 @@
+get-vm | where {$_.PowerState -eq "PoweredOn"} | measure-object

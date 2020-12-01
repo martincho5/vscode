@@ -4,5 +4,5 @@ Get-ChildItem C:\Windows\system32\sethc* | ? { $_.Versioninfo.OriginalFilename -
 Set-Service Remoteregistry -StartupType Disabled
 Stop-Service Remoteregistry
 
-Get-EventLog -LogName Security -InstanceID 682 | Where-Object { $_.message -match 'bvenning' } | Format-List -Property *
-Get-EventLog -LogName Security -InstanceID 682 | Where-Object { $_.message -match 'SABATO' } | Format-List -Property *
+Get-EventLog -LogName Security -InstanceID 682 | Where-Object { $_.message -match 'userX' } | Format-List -Property *
+Get-EventLog -LogName Security -InstanceID 682 | Where-Object { $_.message -match 'ServerX' } | Format-List -Property *

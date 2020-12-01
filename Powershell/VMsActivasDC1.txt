@@ -1,2 +1,0 @@
-Get-Cluster "XXXX" | Get-VM | sort Powerstate
-
